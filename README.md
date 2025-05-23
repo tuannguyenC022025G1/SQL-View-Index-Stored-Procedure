@@ -9,18 +9,23 @@ CREATE VIEW ten_view AS
 SELECT ... FROM ... WHERE ...;
 
 🎯 Mục đích của View:
-	Mục đích	   		Giải thích
-🔒 Bảo mật dữ liệu				Giấu các cột hoặc bảng không cần thiết với người dùng.
-📦 Đơn giản hóa truy vấn		Gom nhiều bảng hoặc điều kiện phức tạp thành 1 view để truy vấn dễ hơn.
-🔄 Tái sử dụng truy vấn			Dùng lại logic phức tạp trong nhiều truy vấn khác nhau.
-🔍 Lọc dữ liệu					Tạo ra các tập con dữ liệu theo điều kiện cụ thể.
++----+-------------------+------------+-------+--------------------------------------------------------+
+| Mục đích 			|   Giải thích          					       | 
++----+-------------------+------------+-------+--------------------------------------------------------+
+| 🔒 Bảo mật dữ liệu: 		|   Giấu các cột hoặc bảng không cần thiết với người dùng.  	       | 
+| 📦 Đơn giản hóa truy vấn: 	|Gom nhiều bảng hoặc điều kiện phức tạp thành 1 view để truy vấn dễ hơn|
+| 🔄 Tái sử dụng truy vấn:	|Dùng lại logic phức tạp trong nhiều truy vấn khác nhau.	       |
+| 🔍 Lọc dữ liệu:		| Tạo ra các tập con dữ liệu theo điều kiện cụ thể.		       | 
++----+-------------------+------------+-------+--------------------------------------------------------+
 
 🎯 Lưu ý:
-	Điều kiện			View có thể làm gì?
-View đơn giản (1 bảng)		Có thể SELECT, đôi khi INSERT, UPDATE, DELETE.
-View phức tạp (JOIN, GROUP BY)	Chỉ SELECT được, không thể sửa đổi dữ liệu.
-View không lưu dữ liệu thật	Mỗi lần truy vấn, nó chạy lại câu lệnh SELECT.
-
++----------------------------------+----------------------------------------------------------------------------+
+|	Điều kiện			View có thể làm gì?							|
+|View đơn giản (1 bảng):		Có thể SELECT, đôi khi INSERT, UPDATE, DELETE.				|
+|---------------------------------------------------------------------------------------------------------------|
+|View phức tạp (JOIN, GROUP BY):	Chỉ SELECT được, không thể sửa đổi dữ liệu.View không lưu dữ liệu thật: |
+|					Mỗi lần truy vấn, nó chạy lại câu lệnh SELECT.				|
++----------------------------------+----------------------------------------------------------------------------+
 🎯 Cập nhật view
  
 ✅ Nếu view đó là updatable, thì bạn có thể chèn, cập nhật hoặc xóa dữ liệu thông qua view, và các thay đổi sẽ ảnh hưởng đến bảng gốc (base table).
